@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quotes</title>
+</head>
+<body>
+    <div id ='quotes'></div>
+    <div id ='author'></div>
+    <button id="newquotes">new Quotes</button>
+    <script>
+        const quote = document.getElementById('quotes');
+        const aut = document.getElementById('author');
+        const nq = document.getElementById('newquotes');
+
+        let rsdata="";
+        let quotesdata="";
+        const getnewquotes=()=>{
+
+            let ran= Math.floor(Math.random()*10);
+            //console.log(rsdata[ran].author)
+            //console.log(rsdata[ran].text)
+            quotesdata=rsdata[ran];
+            quote.innerHTML=`${quotesdata.text}`;
+            quotesdata.author==null? aut.innerHTML=unknown:
+            aut.innerHTML=`${rsdata[ran].author}`;
+        }
+        const getquotes=async()=>{
+            const api = "https://type.fit/api/quotes";
+            try {
+               let data = await fetch(api);
+                rsdata= await data.json();
+                getnewquotes();
+            } catch (error) {
+                
+            }
+        }
+        const api = "https://type.fit/api/quotes";
+        nq.addEventListener('click',getnewquotes);
+        getquotes();
+    </script>
+</body>
+</html>
