@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{>navbar}}
+    <h1>registration form</h1>
+    <form action="/register" method="POST">
+
+    <div>
+     <input type="text" placeholder="first name" name="firstname" value=""/>
+    </div>
+
+    <div>
+     <input type="text" placeholder="last name" name="lastname" value=""/>
+    </div>
+
+    <div>
+     <input type="email" placeholder="email" name="email" value=""/>
+    </div>
+
+
+    <div>
+     <input type="text" placeholder="your phone" name="phone" value="" minlength="10" maxlength="10"/>
+    </div>
+
+    <div>
+     <input type="password" placeholder="password" name="password" value=""/>
+    </div>
+
+    <div>
+     <input type="password" placeholder="confirm password" name="confirmpassword" value=""/>
+    </div>
+
+
+    <div>
+     <input type="radio"  name="gender" value="male"/> male
+    </div>
+
+    <div>
+     <input type="radio"  name="gender" value="female"/> female
+    </div>
+    <div>
+     <input type="submit"  value="Register"/>
+    </div>
+
+    </form>
+</body>
+</html>
