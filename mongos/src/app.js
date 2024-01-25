@@ -7,7 +7,7 @@ mongoss
   const playlistSchema = new mongoss.Schema({  //schema define structure of documate work just like promise
                                               //get defult value ,validators etx..,
     name:{
-      type:String,
+      type:String,                         //validation
       required:true
     },
     ctype:String,
